@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { routes } from "./routes";
-import "./Layout.css";
+import "./Layout.css"; // This import is for side effects (CSS styles)
 
 export const Layout = () => {
   const sortedRoutes = routes.sort((a, b) => {
@@ -27,21 +27,9 @@ export const Layout = () => {
       <header className="layout-header">
         <div className="content">
           <h2>
-            {/* <i className="fa-solid fa-code" /> */}
-            React Components
+            <img src="/src/assets/Logo.jpg" alt="React Components Logo" className="logo" />
+            <span>React Components</span>
           </h2>
-          <button type="button">
-            <i
-              className="fa-solid fa-gear"
-              style={{
-                fontSize: "12.5px",
-                translate: "0 1px",
-                marginRight: "1px",
-              }}
-            ></i>
-            Settings
-            <i className="fa-solid fa-angle-down"></i>
-          </button>
         </div>
       </header>
       <div className="layout-card">

@@ -8,7 +8,7 @@
 
 .layout-table-wrapper {
   overflow: auto;
-  position: relative;
+  position;
   z-index: 2;
   max-height: 60vh;
 }
@@ -38,7 +38,7 @@
   left: 50%;
   translate: -50% 0;
   z-index: 0;
-  background: #5926fc;
+  background: hsl(45, 54%, 58%);
   width: 500vw;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -67,6 +67,7 @@
   font-weight: 400;
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 
 .layout-header h2 i {
@@ -77,6 +78,19 @@
   width: 40px;
   height: 40px;
   border-radius: 8px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .layout-card {
@@ -166,10 +180,81 @@
   border-bottom: 1px solid #34323c;
 }
 
+/* Enhanced hover effects for better UX */
+.layout-table tr:hover {
+  background-color: #25242d;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
 .layout-table tbody tr:last-child {
   border: 0;
 }
 
 .layout-table tbody tr:nth-child(odd) {
   background: #1e1d25;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .layout-header .content {
+    height: 180px;
+    padding: 0 30px 40px;
+  }
+
+  .layout-header h2 {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .layout-header button {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-header .content {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .layout-header h2 {
+    font-size: 18px;
+  }
+
+  .layout-header button {
+    align-self: flex-start;
+  }
+}
+
+/* Focus states for accessibility */
+.layout-header button:focus-visible,
+.layout-table th:focus-visible,
+.layout-table tr:focus-visible {
+  outline: 2px solid #5926fc;
+  outline-offset: 2px;
+}
+
+/* Loading state enhancement */
+.layout-table tbody tr.loading td {
+  opacity: 0.7;
+  background: linear-gradient(90deg, #1e1d25 0%, #25242d 50%, #1e1d25 100%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
