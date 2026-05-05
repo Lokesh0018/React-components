@@ -1,0 +1,135 @@
+.page.sidebar-13-page {
+  background: url("./bg.jpg");
+  background-position: -380px;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Euclid Circular B", "Poppins", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.title h2,
+.title h3 {
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 0 0 10px rgb(0 0 0 / 28%);
+}
+
+.title h2 {
+  margin: 0 0 8px;
+}
+
+.title h3 {
+  letter-spacing: 1px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.sidebar-13 {
+  position: fixed;
+  top: 240px;
+  left: auto;
+  right: auto;
+  bottom: -40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 260px;
+  border-radius: 16px;
+  padding: 0 16px;
+  background: rgb(0 0 0 / 19%);
+  backdrop-filter: blur(30px);
+}
+
+.sidebar-13 header {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.sidebar-13 header img {
+  height: 24px;
+  margin-left: 16px;
+}
+
+.sidebar-13 button {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgb(255 255 255 / 95%);
+  transition: 0.3s;
+}
+
+.sidebar-13 button.active {
+  background: rgb(0 0 0 / 18%);
+}
+
+.sidebar-13 button:not(.active):hover {
+  background: rgb(0 0 0 / 8%);
+}
+
+.sidebar-13 ion-icon {
+  font-size: 19px;
+  width: 20px;
+}
+
+.sidebar-13 button ion-icon:last-child {
+  margin-left: auto;
+  transition: 0.3s;
+}
+
+.sidebar-13 button.active ion-icon:last-child {
+  rotate: -180deg;
+}
+
+.sidebar-13 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-13 .sub-menu {
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+.sidebar-13 .sub-menu ul {
+  padding-left: 0;
+}
+
+.sidebar-13 .sub-menu button {
+  padding-left: 48px;
+}
+
+.sidebar-13 .sub-menu button::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 35%);
+}
